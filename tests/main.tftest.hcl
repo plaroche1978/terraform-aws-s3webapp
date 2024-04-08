@@ -37,10 +37,10 @@ run "bucket_ownership_controls" {
     error_message = "Bucket ID does not match expected value"
   }
 
-#  assert {
-#   condition     = aws_s3_bucket_ownership_controls.bucket.rule.object_ownership == "BucketOwnerPreferred"
-#    error_message = "Object ownership does not match expected value"
-#  }
+  assert {
+   condition     = aws_s3_bucket_ownership_controls.bucket.rule.object_ownership == "BucketOwnerPreferred"
+    error_message = "Object ownership does not match expected value"
+  }
 }
 
 run "bucket_website_configuration" {
