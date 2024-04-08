@@ -38,7 +38,7 @@ run "bucket_ownership_controls" {
   }
 
   assert {
-    condition     = aws_s3_bucket_ownership_controls.bucket.rule.object_ownership == "BucketOwnerPreferred"
+    condition     = aws_s3_bucket_ownership_controls.bucket.rule.object_ownership == [BucketOwnerPreferred]
     error_message = "Object ownership does not match expected value"
   }
 }
