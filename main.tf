@@ -1,6 +1,15 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
-
+provider "aws" {
+  region = "ca-central-1"
+#Default Tagging of resources for finops.
+  default_tags {
+    tags = {
+      Project = var.project_number
+      Owner = var.owner
+    }
+  }
+}
 resource "aws_s3_bucket" "bucket" {
   bucket_prefix = "${var.prefix}-${var.name}"
 
