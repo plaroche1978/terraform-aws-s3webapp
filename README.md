@@ -7,7 +7,7 @@ How to call this module to deploy our WebApp in AWS
 ```
 module "s3webapp" {
   source  = "app.terraform.io/pascal-tfc-org/s3webapp/aws"
-  version = "1.0.0"
+  version = "1.0.1"
 
   name = "namehere"
   prefix = "prefix"
