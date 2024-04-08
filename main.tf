@@ -28,7 +28,7 @@ resource "aws_s3_bucket_public_access_block" "bucket" {
 resource "aws_s3_bucket_ownership_controls" "bucket" {
   bucket = aws_s3_bucket.bucket.id
   rule {
-    object_ownership = "BucketOwnerPreferred"
+    object_ownership = "BucketOwnerEnforced"
   }
 }
 
@@ -50,7 +50,6 @@ resource "aws_s3_bucket_acl" "bucket" {
     aws_s3_bucket_ownership_controls.bucket,
   ]
   bucket = aws_s3_bucket.bucket.id
-
   acl = "public-read"
 }
 
