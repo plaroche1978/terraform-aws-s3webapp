@@ -50,7 +50,7 @@ run "bucket_website_configuration" {
   }
 
   assert {
-    condition     = aws_s3_bucket_website_configuration.bucket.index_document.suffix == "index.html"
+    condition     = aws_s3_bucket_website_configuration.bucket.index_document[0].suffix == "index.html"
     error_message = "Index document suffix does not match expected value"
   }
 }
